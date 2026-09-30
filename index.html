@@ -10,7 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="icon" type="image/svg+xml" sizes="any" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232C65E8'/%3E%3Cpath d='M7 23V9h4l5 7 5-7h4v14h-4v-8l-5 7-5-7v8z' fill='white'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" sizes="any"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232C65E8'/%3E%3Cpath d='M7 23V9h4l5 7 5-7h4v14h-4v-8l-5 7-5-7v8z' fill='white'/%3E%3C/svg%3E">
 
   <style>
     :root {
@@ -18,7 +19,6 @@
       --ink: #0d1b3b;
       --muted: #58647a;
       --line: #dce4f5;
-      --pale: #f4f7ff;
     }
 
     * { box-sizing: border-box; }
@@ -54,39 +54,11 @@
       color: var(--ink);
     }
 
-    .brand > span:last-child {
+    .brand span {
       color: #8992a3;
       font-size: .76em;
       letter-spacing: -.03em;
       margin-left: 5px;
-    }
-
-    .brand .brand-i {
-      position: relative;
-      display: inline-block;
-      font-size: 0;
-      color: inherit;
-      margin: 0;
-      letter-spacing: 0;
-    }
-
-    .brand .brand-i:before {
-      content: '';
-      position: absolute;
-      width: .25em;
-      height: .25em;
-      border-radius: 50%;
-      background: #2d65e8;
-      top: .08em;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .brand .brand-i:after {
-      content: 'ı';
-      font-size: 1.42rem;
-      line-height: 1;
-      color: inherit;
     }
 
     .navlinks {
@@ -457,7 +429,7 @@
 <body>
   <header class="wrap nav">
     <a class="brand" href="#top" aria-label="Mindologics LLP home">
-      M<span class="brand-i">i</span>ndologics <span>LLP</span>
+      Mindologics <span>LLP</span>
     </a>
 
     <nav class="navlinks">
