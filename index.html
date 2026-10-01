@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -336,9 +337,10 @@
       padding: 18px 20px;
     }
 
+    /* FAQ questions — regular/unbold */
     .faq summary {
       cursor: pointer;
-      font-weight: 800;
+      font-weight: 400;
       list-style: none;
       padding-right: 25px;
       position: relative;
@@ -361,11 +363,12 @@
       margin: 12px 0 0;
     }
 
+    /* Full-width CTA banner */
     .contact {
-      margin: 0 auto 35px;
-      width: min(1160px, calc(100% - 40px));
+      margin: 0 0 35px;
+      width: 100%;
       background: var(--blue);
-      padding: 57px;
+      padding: 57px max(40px, calc((100% - 1160px) / 2));
       color: #fff;
       display: flex;
       align-items: end;
@@ -406,13 +409,38 @@
       .navlinks { display: none; }
       .hero { padding: 57px 0; }
       .trust { gap: 20px; flex-wrap: wrap; margin-top: 52px; }
-      .services, .steps, .faq-grid, .product { grid-template-columns: 1fr; }
-      .product { padding: 30px 23px; gap: 24px; }
+
+      .services,
+      .steps,
+      .faq-grid,
+      .product {
+        grid-template-columns: 1fr;
+      }
+
+      .product {
+        padding: 30px 23px;
+        gap: 24px;
+      }
+
       .section { padding: 64px 0; }
+
       .card { min-height: 200px; }
-      .contact { padding: 34px 25px; display: block; }
-      .contact a { display: inline-block; margin-top: 25px; }
-      footer { align-items: flex-start; gap: 10px; flex-direction: column; }
+
+      .contact {
+        padding: 34px 20px;
+        display: block;
+      }
+
+      .contact a {
+        display: inline-block;
+        margin-top: 25px;
+      }
+
+      footer {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -437,6 +465,7 @@
   </header>
 
   <main id="top">
+
     <section class="hero">
       <div class="wrap">
         <div class="eyebrow">Mindologics LLP</div>
@@ -462,10 +491,12 @@
             <b>Since 2020</b>
             Building digital momentum with purpose
           </div>
+
           <div>
             <b>India · Built for anywhere</b>
             Thoughtful solutions for modern businesses
           </div>
+
           <div>
             <b>Strategy. Design. Technology.</b>
             One focused partner from idea to impact
@@ -476,11 +507,13 @@
 
     <section id="services" class="section wrap">
       <div class="label">What we do</div>
+
       <h2 class="heading">
         Everything your business needs to show up, work smarter and grow online.
       </h2>
 
       <div class="services">
+
         <article class="card">
           <div class="num">01 / Websites</div>
           <h3>Website design & development</h3>
@@ -534,17 +567,24 @@
           <h3>Website support & maintenance</h3>
           <p>Ongoing improvements, updates and technical care after your site goes live.</p>
         </article>
+
       </div>
     </section>
 
     <section id="product" class="section wrap">
       <div class="product">
+
         <div>
           <div class="label">Launching soon · Our product</div>
-          <h2 class="heading">Tymora — your business, booked and paid.</h2>
+
+          <h2 class="heading">
+            Tymora — your business, booked and paid.
+          </h2>
+
           <p class="product-copy">
             A premium appointment-booking platform for salons, clinics, consultants, studios and service businesses that want fewer no-shows and a better way to manage their calendar.
           </p>
+
           <a class="product-link" href="https://cal.com/ankit-thakur-3gwplm" target="_blank" rel="noopener">
             Book a meeting about Tymora
           </a>
@@ -558,15 +598,21 @@
           <span>Pay at booking</span>
           <span>Booking reminders</span>
         </div>
+
       </div>
     </section>
 
     <section id="process" class="process section">
       <div class="wrap">
+
         <div class="label">Our approach</div>
-        <h2 class="heading">Simple process. Thoughtful detail. Stronger outcomes.</h2>
+
+        <h2 class="heading">
+          Simple process. Thoughtful detail. Stronger outcomes.
+        </h2>
 
         <div class="steps">
+
           <div class="step">
             <span>01</span>
             <h3>Understand</h3>
@@ -590,12 +636,14 @@
             <h3>Grow</h3>
             <p>We refine the work as your business moves forward.</p>
           </div>
+
         </div>
       </div>
     </section>
 
     <section class="promise wrap">
       <div class="label">Our point of view</div>
+
       <p class="quote">
         The best digital work makes a complex business feel
         <em>simple, confident and ready.</em>
@@ -603,10 +651,15 @@
     </section>
 
     <section id="faq" class="section faq wrap">
+
       <div class="label">FAQ</div>
-      <h2 class="heading">A few helpful answers before we begin.</h2>
+
+      <h2 class="heading">
+        A few helpful answers before we begin.
+      </h2>
 
       <div class="faq-grid">
+
         <details>
           <summary>What types of businesses do you work with?</summary>
           <p>We work with growing businesses, service providers, startups and teams that need a clearer digital presence or a custom tool.</p>
@@ -636,6 +689,7 @@
           <summary>How do we start a project?</summary>
           <p>Book a meeting with us and we will recommend the right next step.</p>
         </details>
+
       </div>
     </section>
 
@@ -649,11 +703,14 @@
         Book a meeting
       </a>
     </section>
+
   </main>
 
   <footer class="wrap">
     <span>© 2026 Mindologics LLP. All rights reserved.</span>
     <span>Digital solutions, built with clarity.</span>
   </footer>
+
 </body>
 </html>
+```
