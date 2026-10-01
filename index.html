@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,9 +20,13 @@
       --line: #dce4f5;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -103,7 +108,7 @@
       background: radial-gradient(
         circle,
         var(--blue) 0%,
-        rgba(45,101,232,.1) 44%,
+        rgba(45, 101, 232, .1) 44%,
         transparent 70%
       );
       opacity: .34;
@@ -156,7 +161,7 @@
       color: #fff;
       padding: 14px 21px;
       font-size: .92rem;
-      box-shadow: 0 10px 25px rgba(45,101,232,.24);
+      box-shadow: 0 10px 25px rgba(45, 101, 232, .24);
     }
 
     .secondary {
@@ -165,12 +170,11 @@
       font-size: .92rem;
     }
 
-    /* BUTTON ANIMATIONS */
+    /* BUTTON HOVER / TRANSLATE EFFECTS */
 
     .primary,
     .secondary,
     .mini,
-    .product-link,
     .contact a {
       transition:
         transform .22s ease,
@@ -188,22 +192,14 @@
     }
 
     .primary:hover {
-      box-shadow: 0 14px 30px rgba(45,101,232,.30);
+      box-shadow: 0 14px 30px rgba(45, 101, 232, .30);
     }
 
     .secondary:hover,
     .mini:hover {
       border-color: var(--blue);
       color: var(--blue);
-      box-shadow: 0 8px 20px rgba(45,101,232,.10);
-    }
-
-    .product-link:hover {
-      transform: translateX(4px);
-    }
-
-    .contact a:hover {
-      box-shadow: 0 12px 25px rgba(13,27,59,.18);
+      box-shadow: 0 8px 20px rgba(45, 101, 232, .10);
     }
 
     .primary:active,
@@ -231,7 +227,7 @@
       color: var(--ink);
     }
 
-    /* SECTIONS */
+    /* GENERAL SECTIONS */
 
     .section {
       padding: 88px 0;
@@ -265,7 +261,7 @@
 
     .card:hover {
       border-color: var(--blue);
-      box-shadow: 0 16px 35px rgba(29,59,130,.1);
+      box-shadow: 0 16px 35px rgba(29, 59, 130, .1);
       transform: translateY(-3px);
     }
 
@@ -309,10 +305,38 @@
       max-width: 540px;
     }
 
+    /* TYMORA CTA + HOVER ARROW */
+
     .product-link {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
       margin-top: 24px;
       color: var(--blue);
+      font-weight: 500;
+      transition: transform .22s ease;
+    }
+
+    .product-link::after {
+      content: '→';
+      display: inline-block;
+      margin-left: 0;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition:
+        opacity .22s ease,
+        transform .22s ease,
+        margin-left .22s ease;
+    }
+
+    .product-link:hover {
+      transform: translateX(4px);
+    }
+
+    .product-link:hover::after {
+      opacity: 1;
+      margin-left: 9px;
+      transform: translateX(0);
     }
 
     .product-features {
@@ -359,7 +383,7 @@
     }
 
     .step {
-      border-top: 1px solid rgba(255,255,255,.28);
+      border-top: 1px solid rgba(255, 255, 255, .28);
       padding-top: 17px;
     }
 
@@ -446,18 +470,19 @@
       margin: 12px 0 0;
     }
 
-    /* FULL WIDTH CTA */
+    /* FULL WIDTH CTA ABOVE FOOTER */
 
     .contact {
       margin: 0 0 35px;
       width: 100%;
       background: var(--blue);
-      padding: 57px max(40px, calc((100% - 1160px) / 2));
+      padding: 65px max(40px, calc((100% - 1160px) / 2));
       color: #fff;
+
       display: flex;
-      align-items: end;
+      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 40px;
     }
 
     .contact h2 {
@@ -465,7 +490,7 @@
       letter-spacing: -.06em;
       line-height: 1.03;
       margin: 8px 0 0;
-      max-width: 620px;
+      max-width: 650px;
     }
 
     .contact .label {
@@ -473,11 +498,28 @@
     }
 
     .contact a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
       background: #fff;
       color: var(--blue);
-      padding: 14px 20px;
-      font-size: .9rem;
+
+      padding: 17px 29px;
+      min-width: 175px;
+
+      font-size: 1rem;
+      font-weight: 500;
       white-space: nowrap;
+    }
+
+    .contact a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(13, 27, 59, .20);
+    }
+
+    .contact a:active {
+      transform: translateY(-1px);
     }
 
     /* FOOTER */
@@ -535,12 +577,11 @@
       }
 
       .contact {
-        padding: 34px 20px;
+        padding: 45px 20px;
         display: block;
       }
 
       .contact a {
-        display: inline-block;
         margin-top: 25px;
       }
 
@@ -554,6 +595,8 @@
 </head>
 
 <body>
+
+  <!-- NAVIGATION -->
 
   <header class="wrap nav">
 
@@ -569,14 +612,17 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <a class="mini"
-       href="https://cal.com/ankit-thakur-3gwplm"
-       target="_blank"
-       rel="noopener">
+    <a
+      class="mini"
+      href="https://cal.com/ankit-thakur-3gwplm"
+      target="_blank"
+      rel="noopener"
+    >
       Book a meeting
     </a>
 
   </header>
+
 
   <main id="top">
 
@@ -596,10 +642,12 @@
 
         <div class="buttons">
 
-          <a class="primary"
-             href="https://cal.com/ankit-thakur-3gwplm"
-             target="_blank"
-             rel="noopener">
+          <a
+            class="primary"
+            href="https://cal.com/ankit-thakur-3gwplm"
+            target="_blank"
+            rel="noopener"
+          >
             Book a meeting
           </a>
 
@@ -630,6 +678,7 @@
 
       </div>
     </section>
+
 
     <!-- SERVICES -->
 
@@ -716,9 +765,11 @@
         </article>
 
       </div>
+
     </section>
 
-    <!-- PRODUCT -->
+
+    <!-- TYMORA -->
 
     <section id="product" class="section wrap">
 
@@ -738,10 +789,12 @@
             A premium appointment-booking platform for salons, clinics, consultants, studios and service businesses that want fewer no-shows and a better way to manage their calendar.
           </p>
 
-          <a class="product-link"
-             href="https://cal.com/ankit-thakur-3gwplm"
-             target="_blank"
-             rel="noopener">
+          <a
+            class="product-link"
+            href="https://cal.com/ankit-thakur-3gwplm"
+            target="_blank"
+            rel="noopener"
+          >
             Book a meeting about Tymora
           </a>
 
@@ -757,7 +810,9 @@
         </div>
 
       </div>
+
     </section>
+
 
     <!-- PROCESS -->
 
@@ -776,31 +831,41 @@
           <div class="step">
             <span>01</span>
             <h3>Understand</h3>
-            <p>We listen to the business goal behind the brief.</p>
+            <p>
+              We listen to the business goal behind the brief.
+            </p>
           </div>
 
           <div class="step">
             <span>02</span>
             <h3>Shape</h3>
-            <p>We turn the idea into a focused digital direction.</p>
+            <p>
+              We turn the idea into a focused digital direction.
+            </p>
           </div>
 
           <div class="step">
             <span>03</span>
             <h3>Build</h3>
-            <p>We craft the experience with care and clarity.</p>
+            <p>
+              We craft the experience with care and clarity.
+            </p>
           </div>
 
           <div class="step">
             <span>04</span>
             <h3>Grow</h3>
-            <p>We refine the work as your business moves forward.</p>
+            <p>
+              We refine the work as your business moves forward.
+            </p>
           </div>
 
         </div>
 
       </div>
+
     </section>
+
 
     <!-- POINT OF VIEW -->
 
@@ -817,6 +882,7 @@
 
     </section>
 
+
     <!-- FAQ -->
 
     <section id="faq" class="section faq wrap">
@@ -830,42 +896,54 @@
       <div class="faq-grid">
 
         <details>
-          <summary>What types of businesses do you work with?</summary>
+          <summary>
+            What types of businesses do you work with?
+          </summary>
           <p>
             We work with growing businesses, service providers, startups and teams that need a clearer digital presence or a custom tool.
           </p>
         </details>
 
         <details>
-          <summary>Can you build a website from scratch?</summary>
+          <summary>
+            Can you build a website from scratch?
+          </summary>
           <p>
             Yes. We can shape the structure, design and development from a new idea through to launch.
           </p>
         </details>
 
         <details>
-          <summary>Do you offer custom software or only websites?</summary>
+          <summary>
+            Do you offer custom software or only websites?
+          </summary>
           <p>
             Both. Alongside websites, we build tailored web applications, internal dashboards and business portals.
           </p>
         </details>
 
         <details>
-          <summary>Will my website work on mobile?</summary>
+          <summary>
+            Will my website work on mobile?
+          </summary>
           <p>
             Yes. Every website is designed to work smoothly across phones, tablets and desktop screens.
           </p>
         </details>
 
         <details>
-          <summary>Can you support the website after it launches?</summary>
+          <summary>
+            Can you support the website after it launches?
+          </summary>
           <p>
             Yes. Ongoing maintenance and improvements can be included according to your requirements.
           </p>
         </details>
 
         <details>
-          <summary>How do we start a project?</summary>
+          <summary>
+            How do we start a project?
+          </summary>
           <p>
             Book a meeting with us and we will recommend the right next step.
           </p>
@@ -875,18 +953,28 @@
 
     </section>
 
+
     <!-- FULL WIDTH CTA -->
 
     <section id="contact" class="contact">
 
       <div>
-        <div class="label">Start a conversation</div>
-        <h2>Bring your next idea into focus.</h2>
+
+        <div class="label">
+          Start a conversation
+        </div>
+
+        <h2>
+          Bring your next idea into focus.
+        </h2>
+
       </div>
 
-      <a href="https://cal.com/ankit-thakur-3gwplm"
-         target="_blank"
-         rel="noopener">
+      <a
+        href="https://cal.com/ankit-thakur-3gwplm"
+        target="_blank"
+        rel="noopener"
+      >
         Book a meeting
       </a>
 
@@ -894,11 +982,19 @@
 
   </main>
 
+
   <!-- FOOTER -->
 
   <footer class="wrap">
-    <span>© 2026 Mindologics LLP. All rights reserved.</span>
-    <span>Digital solutions, built with clarity.</span>
+
+    <span>
+      © 2026 Mindologics LLP. All rights reserved.
+    </span>
+
+    <span>
+      Digital solutions, built with clarity.
+    </span>
+
   </footer>
 
 </body>
