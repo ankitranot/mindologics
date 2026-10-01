@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -42,6 +41,8 @@
       margin: auto;
     }
 
+    /* NAVIGATION */
+
     .nav {
       height: 82px;
       display: flex;
@@ -68,7 +69,13 @@
       font-weight: 500;
     }
 
-    .navlinks a:hover { color: var(--blue); }
+    .navlinks a {
+      transition: color .2s ease;
+    }
+
+    .navlinks a:hover {
+      color: var(--blue);
+    }
 
     .mini {
       border: 1.5px solid var(--blue);
@@ -77,6 +84,8 @@
       font-size: .85rem;
       font-weight: 500;
     }
+
+    /* HERO */
 
     .hero {
       padding: 84px 0 70px;
@@ -91,11 +100,16 @@
       height: 680px;
       right: -270px;
       top: -360px;
-      background: radial-gradient(circle, var(--blue) 0%, rgba(45,101,232,.1) 44%, transparent 70%);
+      background: radial-gradient(
+        circle,
+        var(--blue) 0%,
+        rgba(45,101,232,.1) 44%,
+        transparent 70%
+      );
       opacity: .34;
+      pointer-events: none;
     }
 
-    .eyebrow,
     .label {
       color: var(--blue);
       font-weight: 800;
@@ -104,31 +118,18 @@
       text-transform: uppercase;
     }
 
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-size: .83rem;
-      letter-spacing: .08em;
-    }
-
-    .eyebrow:before {
-      content: '';
-      width: 27px;
-      height: 2px;
-      background: var(--blue);
-    }
-
     h1 {
       font-size: clamp(3rem, 7vw, 6.35rem);
       letter-spacing: -.075em;
       line-height: .99;
       max-width: 920px;
-      margin: 20px 0 25px;
+      margin: 0 0 25px;
       font-weight: 800;
     }
 
-    .blue { color: var(--blue); }
+    .blue {
+      color: var(--blue);
+    }
 
     .intro {
       max-width: 610px;
@@ -164,6 +165,56 @@
       font-size: .92rem;
     }
 
+    /* BUTTON ANIMATIONS */
+
+    .primary,
+    .secondary,
+    .mini,
+    .product-link,
+    .contact a {
+      transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        background-color .22s ease,
+        border-color .22s ease,
+        color .22s ease;
+    }
+
+    .primary:hover,
+    .secondary:hover,
+    .mini:hover,
+    .contact a:hover {
+      transform: translateY(-3px);
+    }
+
+    .primary:hover {
+      box-shadow: 0 14px 30px rgba(45,101,232,.30);
+    }
+
+    .secondary:hover,
+    .mini:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      box-shadow: 0 8px 20px rgba(45,101,232,.10);
+    }
+
+    .product-link:hover {
+      transform: translateX(4px);
+    }
+
+    .contact a:hover {
+      box-shadow: 0 12px 25px rgba(13,27,59,.18);
+    }
+
+    .primary:active,
+    .secondary:active,
+    .mini:active,
+    .contact a:active {
+      transform: translateY(-1px);
+    }
+
+    /* TRUST */
+
     .trust {
       display: flex;
       gap: 34px;
@@ -180,7 +231,11 @@
       color: var(--ink);
     }
 
-    .section { padding: 88px 0; }
+    /* SECTIONS */
+
+    .section {
+      padding: 88px 0;
+    }
 
     .heading {
       font-size: clamp(2rem, 4vw, 3.35rem);
@@ -189,6 +244,8 @@
       max-width: 720px;
       margin: 10px 0 44px;
     }
+
+    /* SERVICES */
 
     .services {
       display: grid;
@@ -200,7 +257,10 @@
       border: 1px solid var(--line);
       padding: 30px;
       min-height: 230px;
-      transition: .2s;
+      transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
     }
 
     .card:hover {
@@ -227,6 +287,8 @@
       margin: 0;
     }
 
+    /* PRODUCT */
+
     .product {
       padding: 38px 42px;
       background: linear-gradient(135deg, #eff4ff, #fff 60%);
@@ -237,7 +299,9 @@
       align-items: center;
     }
 
-    .product .heading { margin: 10px 0 17px; }
+    .product .heading {
+      margin: 10px 0 17px;
+    }
 
     .product-copy {
       color: var(--muted);
@@ -272,14 +336,20 @@
       margin-right: 8px;
     }
 
+    /* PROCESS */
+
     .process {
       background: var(--ink);
       color: #fff;
     }
 
-    .process .label { color: #8cabff; }
+    .process .label {
+      color: #8cabff;
+    }
 
-    .process .heading { max-width: 570px; }
+    .process .heading {
+      max-width: 570px;
+    }
 
     .steps {
       display: grid;
@@ -309,7 +379,11 @@
       margin: 0;
     }
 
-    .promise { padding: 88px 0; }
+    /* POINT OF VIEW */
+
+    .promise {
+      padding: 88px 0;
+    }
 
     .quote {
       font-size: clamp(2rem, 4vw, 3.9rem);
@@ -324,7 +398,11 @@
       color: var(--blue);
     }
 
-    .faq { padding-top: 0; }
+    /* FAQ */
+
+    .faq {
+      padding-top: 0;
+    }
 
     .faq-grid {
       display: grid;
@@ -337,13 +415,16 @@
       padding: 18px 20px;
     }
 
-    /* FAQ questions — regular/unbold */
     .faq summary {
       cursor: pointer;
       font-weight: 400;
       list-style: none;
       padding-right: 25px;
       position: relative;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none;
     }
 
     .faq summary:after {
@@ -355,7 +436,9 @@
       top: -7px;
     }
 
-    .faq details[open] summary:after { content: '–'; }
+    .faq details[open] summary:after {
+      content: '–';
+    }
 
     .faq p {
       color: var(--muted);
@@ -363,7 +446,8 @@
       margin: 12px 0 0;
     }
 
-    /* Full-width CTA banner */
+    /* FULL WIDTH CTA */
+
     .contact {
       margin: 0 0 35px;
       width: 100%;
@@ -384,7 +468,9 @@
       max-width: 620px;
     }
 
-    .contact .label { color: #cbd8ff; }
+    .contact .label {
+      color: #cbd8ff;
+    }
 
     .contact a {
       background: #fff;
@@ -393,6 +479,8 @@
       font-size: .9rem;
       white-space: nowrap;
     }
+
+    /* FOOTER */
 
     footer {
       display: flex;
@@ -404,11 +492,27 @@
       border-top: 1px solid var(--line);
     }
 
+    /* MOBILE */
+
     @media (max-width: 700px) {
-      .brand img { width: 166px; }
-      .navlinks { display: none; }
-      .hero { padding: 57px 0; }
-      .trust { gap: 20px; flex-wrap: wrap; margin-top: 52px; }
+
+      .brand img {
+        width: 166px;
+      }
+
+      .navlinks {
+        display: none;
+      }
+
+      .hero {
+        padding: 57px 0;
+      }
+
+      .trust {
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 52px;
+      }
 
       .services,
       .steps,
@@ -422,9 +526,13 @@
         gap: 24px;
       }
 
-      .section { padding: 64px 0; }
+      .section {
+        padding: 64px 0;
+      }
 
-      .card { min-height: 200px; }
+      .card {
+        min-height: 200px;
+      }
 
       .contact {
         padding: 34px 20px;
@@ -446,7 +554,9 @@
 </head>
 
 <body>
+
   <header class="wrap nav">
+
     <a class="brand" href="#top" aria-label="Mindologics LLP home">
       <img src="mindologics-wordmark.png" alt="Mindologics LLP">
     </a>
@@ -459,16 +569,21 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <a class="mini" href="https://cal.com/ankit-thakur-3gwplm" target="_blank" rel="noopener">
+    <a class="mini"
+       href="https://cal.com/ankit-thakur-3gwplm"
+       target="_blank"
+       rel="noopener">
       Book a meeting
     </a>
+
   </header>
 
   <main id="top">
 
+    <!-- HERO -->
+
     <section class="hero">
       <div class="wrap">
-        <div class="eyebrow">Mindologics LLP</div>
 
         <h1>
           Ideas, shaped into
@@ -480,13 +595,22 @@
         </p>
 
         <div class="buttons">
-          <a class="primary" href="https://cal.com/ankit-thakur-3gwplm" target="_blank" rel="noopener">
+
+          <a class="primary"
+             href="https://cal.com/ankit-thakur-3gwplm"
+             target="_blank"
+             rel="noopener">
             Book a meeting
           </a>
-          <a class="secondary" href="#services">Explore our services</a>
+
+          <a class="secondary" href="#services">
+            Explore our services
+          </a>
+
         </div>
 
         <div class="trust">
+
           <div>
             <b>Since 2020</b>
             Building digital momentum with purpose
@@ -501,11 +625,16 @@
             <b>Strategy. Design. Technology.</b>
             One focused partner from idea to impact
           </div>
+
         </div>
+
       </div>
     </section>
 
+    <!-- SERVICES -->
+
     <section id="services" class="section wrap">
+
       <div class="label">What we do</div>
 
       <h2 class="heading">
@@ -517,65 +646,89 @@
         <article class="card">
           <div class="num">01 / Websites</div>
           <h3>Website design & development</h3>
-          <p>Modern, responsive websites built to explain your business clearly and convert visitors into enquiries.</p>
+          <p>
+            Modern, responsive websites built to explain your business clearly and convert visitors into enquiries.
+          </p>
         </article>
 
         <article class="card">
           <div class="num">02 / Web apps</div>
           <h3>Custom business web apps</h3>
-          <p>Dashboards, portals and internal tools shaped around your exact workflow.</p>
+          <p>
+            Dashboards, portals and internal tools shaped around your exact workflow.
+          </p>
         </article>
 
         <article class="card">
           <div class="num">03 / Mobile</div>
           <h3>Mobile app development</h3>
-          <p>Useful mobile experiences for customers, field teams and everyday operations.</p>
+          <p>
+            Useful mobile experiences for customers, field teams and everyday operations.
+          </p>
         </article>
 
         <article class="card">
           <div class="num">04 / Design</div>
           <h3>UI / UX design</h3>
-          <p>Clear user journeys and interfaces that make your digital product easy to use.</p>
+          <p>
+            Clear user journeys and interfaces that make your digital product easy to use.
+          </p>
         </article>
 
         <article class="card">
           <div class="num">05 / Brand</div>
           <h3>Brand identity & creatives</h3>
-          <p>Logo direction, social creatives and visual systems that keep your business recognisable.</p>
+          <p>
+            Logo direction, social creatives and visual systems that keep your business recognisable.
+          </p>
         </article>
 
         <article class="card">
           <div class="num">06 / Growth</div>
           <h3>SEO & content strategy</h3>
-          <p>Foundational search optimisation and content direction to help the right audience find you.</p>
+          <p>
+            Foundational search optimisation and content direction to help the right audience find you.
+          </p>
         </article>
 
         <article class="card">
           <div class="num">07 / Marketing</div>
           <h3>Paid media advertising</h3>
-          <p>Focused ad campaigns for lead generation, visibility and measurable growth.</p>
+          <p>
+            Focused ad campaigns for lead generation, visibility and measurable growth.
+          </p>
         </article>
 
         <article class="card">
           <div class="num">08 / Social</div>
           <h3>Social media marketing</h3>
-          <p>Content planning and campaign support that make your brand consistent across channels.</p>
+          <p>
+            Content planning and campaign support that make your brand consistent across channels.
+          </p>
         </article>
 
         <article class="card">
           <div class="num">09 / Support</div>
           <h3>Website support & maintenance</h3>
-          <p>Ongoing improvements, updates and technical care after your site goes live.</p>
+          <p>
+            Ongoing improvements, updates and technical care after your site goes live.
+          </p>
         </article>
 
       </div>
     </section>
 
+    <!-- PRODUCT -->
+
     <section id="product" class="section wrap">
+
       <div class="product">
 
         <div>
-          <div class="label">Launching soon · Our product</div>
+
+          <div class="label">
+            Launching soon · Our product
+          </div>
 
           <h2 class="heading">
             Tymora — your business, booked and paid.
@@ -585,9 +738,13 @@
             A premium appointment-booking platform for salons, clinics, consultants, studios and service businesses that want fewer no-shows and a better way to manage their calendar.
           </p>
 
-          <a class="product-link" href="https://cal.com/ankit-thakur-3gwplm" target="_blank" rel="noopener">
+          <a class="product-link"
+             href="https://cal.com/ankit-thakur-3gwplm"
+             target="_blank"
+             rel="noopener">
             Book a meeting about Tymora
           </a>
+
         </div>
 
         <div class="product-features">
@@ -602,7 +759,10 @@
       </div>
     </section>
 
+    <!-- PROCESS -->
+
     <section id="process" class="process section">
+
       <div class="wrap">
 
         <div class="label">Our approach</div>
@@ -638,17 +798,26 @@
           </div>
 
         </div>
+
       </div>
     </section>
 
+    <!-- POINT OF VIEW -->
+
     <section class="promise wrap">
-      <div class="label">Our point of view</div>
+
+      <div class="label">
+        Our point of view
+      </div>
 
       <p class="quote">
         The best digital work makes a complex business feel
         <em>simple, confident and ready.</em>
       </p>
+
     </section>
+
+    <!-- FAQ -->
 
     <section id="faq" class="section faq wrap">
 
@@ -662,49 +831,70 @@
 
         <details>
           <summary>What types of businesses do you work with?</summary>
-          <p>We work with growing businesses, service providers, startups and teams that need a clearer digital presence or a custom tool.</p>
+          <p>
+            We work with growing businesses, service providers, startups and teams that need a clearer digital presence or a custom tool.
+          </p>
         </details>
 
         <details>
           <summary>Can you build a website from scratch?</summary>
-          <p>Yes. We can shape the structure, design and development from a new idea through to launch.</p>
+          <p>
+            Yes. We can shape the structure, design and development from a new idea through to launch.
+          </p>
         </details>
 
         <details>
           <summary>Do you offer custom software or only websites?</summary>
-          <p>Both. Alongside websites, we build tailored web applications, internal dashboards and business portals.</p>
+          <p>
+            Both. Alongside websites, we build tailored web applications, internal dashboards and business portals.
+          </p>
         </details>
 
         <details>
           <summary>Will my website work on mobile?</summary>
-          <p>Yes. Every website is designed to work smoothly across phones, tablets and desktop screens.</p>
+          <p>
+            Yes. Every website is designed to work smoothly across phones, tablets and desktop screens.
+          </p>
         </details>
 
         <details>
           <summary>Can you support the website after it launches?</summary>
-          <p>Yes. Ongoing maintenance and improvements can be included according to your requirements.</p>
+          <p>
+            Yes. Ongoing maintenance and improvements can be included according to your requirements.
+          </p>
         </details>
 
         <details>
           <summary>How do we start a project?</summary>
-          <p>Book a meeting with us and we will recommend the right next step.</p>
+          <p>
+            Book a meeting with us and we will recommend the right next step.
+          </p>
         </details>
 
       </div>
+
     </section>
 
+    <!-- FULL WIDTH CTA -->
+
     <section id="contact" class="contact">
+
       <div>
         <div class="label">Start a conversation</div>
         <h2>Bring your next idea into focus.</h2>
       </div>
 
-      <a href="https://cal.com/ankit-thakur-3gwplm" target="_blank" rel="noopener">
+      <a href="https://cal.com/ankit-thakur-3gwplm"
+         target="_blank"
+         rel="noopener">
         Book a meeting
       </a>
+
     </section>
 
   </main>
+
+  <!-- FOOTER -->
 
   <footer class="wrap">
     <span>© 2026 Mindologics LLP. All rights reserved.</span>
